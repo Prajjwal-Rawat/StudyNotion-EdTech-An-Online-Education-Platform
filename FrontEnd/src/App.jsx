@@ -4,6 +4,8 @@ import "./App.css"
 import NavBar from "./components/common/NavBar";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import ForgotPassword from "./pages/ForgotPassword";
+import UpdatePassword from "./pages/UpdatePassword";
 
 function App() {
 
@@ -14,6 +16,8 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/signup" element={<SignUp/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/forgot-password" element={<ForgotPassword/>}/>
+        <Route path="/reset-password/:id" element={<UpdatePassword/>}/>
       </Routes>
     </div>
   )

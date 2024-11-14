@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const initialState = {
     signupData: null,
+    loading: false,
     token: localStorage.getItem("token") ? JSON.parse(localStorage.getItem("token")) : null,
     errMessage: ""
 };
@@ -21,9 +22,12 @@ const authSlice = createSlice({
         },
         setErrMessage(state, value){
             state.errMessage = value.payload;
+        },
+        setLoading(state, value){
+            state.loading = value.payload
         }
     }
 });
 
-export const {setToken, setSignupData, setErrMessage} = authSlice.actions;
+export const {setToken, setSignupData, setErrMessage, setLoading} = authSlice.actions;
 export default authSlice.reducer;
