@@ -25,7 +25,7 @@ const SignUpForm = () => {
     Mobile: ""
   })
 
-  const {Firstname, Lastname, Email, Password, Confirmpass, Mobile} = formData;
+  const {Email, Password, Confirmpass} = formData;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
