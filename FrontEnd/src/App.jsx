@@ -7,6 +7,8 @@ import SignUp from "./pages/SignUp";
 import ForgotPassword from "./pages/ForgotPassword";
 import UpdatePassword from "./pages/UpdatePassword";
 import VerifyEmail from "./pages/VerifyEmail";
+import AboutUs from "./pages/AboutUs";
+import ContactUsPage from "./components/core/ContactPage/ContactUsPage";
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword/>}/>
         <Route path="/reset-password/:id" element={<UpdatePassword/>}/>
         <Route path="/verify-email" element={<VerifyEmail/>}/>
+        <Route path="/about" element={<AboutUs/>}/>
+        <Route path="/contact" element={<ContactUsPage/>}/>
       </Routes>
     </div>
   )
