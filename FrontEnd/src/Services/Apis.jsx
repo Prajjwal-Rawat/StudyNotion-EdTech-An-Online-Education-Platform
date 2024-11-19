@@ -15,3 +15,9 @@ export const RESET_PASSWORD = BaseUrl + "auth/resetPassword";
 
 //Contact us Api
 export const CONTACTUS_API = BaseUrl + "contact/contactUs";
+
+
+//update profile apis
+export const UPDATE_PROFILE_IMG_API = BaseUrl + "profile/updateImage";
+export const DELETE_ACCOUNT_API = BaseUrl + "profile/deleteAccount";
+export const UPDATE_PROFILE_DETAILS_API = BaseUrl + "profile/updateProfile";

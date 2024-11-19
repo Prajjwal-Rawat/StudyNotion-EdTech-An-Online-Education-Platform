@@ -9,6 +9,7 @@ const ForgotPassword = () => {
     const { loading } = useSelector((state) => state.auth);
     const [emailSent, setEmailSent] = useState(false);
     const [email, setEmail] = useState("");
+    const {errMessage} = useSelector((state) => state.auth);
 
     const dispatch = useDispatch();
 
@@ -49,7 +50,13 @@ const ForgotPassword = () => {
                                         onChange={(e) => setEmail(e.target.value)}
                                         placeholder='Enter Your Email Address' />
                                     </label>
+                                    
                                 )
+                            }
+                            {
+                                (errMessage === "Email is not valid, Please enter a valid email address" || errMessage === "Email not found, Please create a account first, SignIn to StudyNotion") 
+                                &&  <p className='text-red-200'>{errMessage}</p>
+                                
                             }
 
                             <button type="submit"

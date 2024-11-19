@@ -92,6 +92,7 @@ export function login(Email, Password, navigate) {
                 : `https://api.dicebear.com/5.x/initials/svg?seed=${response.data.user.FirstName} ${response.data.user.LastName}`
             dispatch(setUser({ ...response.data.user, image: userImage }))
             localStorage.setItem("token", JSON.stringify(response.data.token));
+            localStorage.setItem("user", JSON.stringify(response.data.user));
             navigate("/dashboard/my-profile");
             dispatch(setErrMessage(""));
         } catch (err) {
@@ -101,6 +102,20 @@ export function login(Email, Password, navigate) {
         } finally {
             toast.dismiss(toastId);
         }
+    }
+}
+
+
+
+export function logout(navigate){
+    return (dispatch) => {
+        dispatch(setToken(null))
+        dispatch(setUser(null));
+        // dispatch(resetCart());
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        toast.success("Logged Out");
+        navigate("/");
     }
 }
 
@@ -127,7 +142,7 @@ export function getPasswordResetToken(Email, setEmailSent) {
         } catch (err) {
             console.log("Error in sending reset email ", err);
             toast.error("Failed to send email for reset password");
-
+            dispatch(setErrMessage(err.response.data.message || "Reset password failed"));
         } finally {
             toast.dismiss(toastId);
             dispatch(setLoading(false));

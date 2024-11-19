@@ -82,11 +82,11 @@ const NavBar = () => {
           </ul>
         </nav>
 
-        <div>
+        <div className='flex gap-5 items-center'>
           {
             user && user?.accountType != "Instructor" && (
               <Link to="/dashboard/cart" className='relative'>
-                <FaCartShopping />
+                <FaCartShopping className='text-2xl text-white' />
                 {
                   totalItems > 0 && (
                     <span>
