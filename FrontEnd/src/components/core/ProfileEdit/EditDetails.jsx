@@ -20,7 +20,7 @@ const EditDetails = () => {
 
 
     return (
-        <div className="text-white flex flex-col ml-[10rem] mb-3 gap-10 mx-auto w-[900px] max-w-5xl mt-10">
+        <div className="text-white flex flex-col mb-3 gap-10 mx-auto w-[900px] max-w-5xl mt-10">
             <h1 className="text-3xl font-semibold">Update Profile Details</h1>
 
             <form onSubmit={handleSubmit(submitProfileDetails)} className="space-y-6">
@@ -98,7 +98,7 @@ const EditDetails = () => {
                                     {...register("Gender")}
                                     defaultValue={user?.AdditionalDetails?.Gender}
                                 >
-                                    <option value="Select Your Gender" disabled >Select Your Gender</option>
+                                    <option value="" disabled >Select Your Gender</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                 </select>
@@ -124,7 +124,7 @@ const EditDetails = () => {
                                     {...register("Profession")}
                                     defaultValue={user?.AdditionalDetails?.Profession}
                                     >
-                                    <option value="Select Your Profession" disabled >Select Your Profession</option>
+                                    <option value="" disabled >Select Your Profession</option>
                                     <option value="Software Developer">Software Developer</option>
                                     <option value="Data Analyist">Data Analyist</option>
                                     <option value="Full Stack Developer">Full Stack Developer</option>

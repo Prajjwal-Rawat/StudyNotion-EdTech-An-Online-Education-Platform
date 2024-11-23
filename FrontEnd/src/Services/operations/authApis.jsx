@@ -3,6 +3,7 @@ import { apiConnector } from "../apiConnector";
 import { LOGIN_API, RESET_PASSWORD, RESET_PASSWORD_TOKEN, SEND_OTP, SIGNUP_API } from "../Apis";
 import { setToken, setErrMessage, setLoading } from "../../Slices/AuthSlice";
 import { setUser } from "../../Slices/ProfileSlice";
+import { setSteps, setCourse } from "../../Slices/CourseSlice";
 
 
 
@@ -111,9 +112,13 @@ export function logout(navigate){
     return (dispatch) => {
         dispatch(setToken(null))
         dispatch(setUser(null));
+        // dispatch(setSteps(null))
+        // dispatch(setCourse(null))
         // dispatch(resetCart());
         localStorage.removeItem("token");
         localStorage.removeItem("user");
+        localStorage.removeItem("step");
+        localStorage.removeItem("course");
         toast.success("Logged Out");
         navigate("/");
     }

@@ -28,7 +28,7 @@ const ChangePassword = () => {
   }, [isSubmitSuccessful, reset])
 
   return (
-   <div className="text-white flex flex-col ml-[10rem] mb-3 gap-10 mx-auto w-[900px] max-w-5xl mt-10">
+   <div className="text-white flex flex-col mb-3 gap-10 mx-auto w-[900px] max-w-5xl mt-10">
       <h1 className="text-3xl font-semibold">Update Password</h1>
    
     <form onSubmit={handleSubmit(submitForm)} className="space-y-6">

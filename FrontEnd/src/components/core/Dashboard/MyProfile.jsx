@@ -8,7 +8,7 @@ const MyProfile = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="text-white flex flex-col ml-[10rem] min-h-[50rem] gap-10 mx-auto w-[900px] max-w-5xl mt-10">
+    <div className="text-white flex flex-col min-h-[50rem] gap-10 mx-auto w-[900px] max-w-5xl mt-10">
       <h1 className="text-3xl font-semibold ">My Profile</h1>
 
       {/* section 1 */}

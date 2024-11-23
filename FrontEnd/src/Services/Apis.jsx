@@ -21,3 +21,25 @@ export const CONTACTUS_API = BaseUrl + "contact/contactUs";
 export const UPDATE_PROFILE_IMG_API = BaseUrl + "profile/updateImage";
 export const DELETE_ACCOUNT_API = BaseUrl + "profile/deleteAccount";
 export const UPDATE_PROFILE_DETAILS_API = BaseUrl + "profile/updateProfile";
+export const GET_ENROLLED_COURSES_API = BaseUrl + "profile/getEnrolledCourses";
+
+
+
+//courses api
+
+export const GET_ALL_COURSE_CATEGORIES = BaseUrl + "course/showAllCategories";
+export const EDIT_COURSE_DETAILS = BaseUrl + "course/editCourse";
+export const CREATE_COURSE = BaseUrl + "course/createCourse";
+export const DELETE_COURSE  = BaseUrl + "course/deleteCourse"
+
+export const CREATE_SECTION = BaseUrl + "course/addSection";
+export const UPDATE_SECTION_DETAILS = BaseUrl + "course/updateSection";
+export const DELETE_SECTION = BaseUrl + "course/deleteSection";
+
+export const CREATE_SUB_SECTION = BaseUrl + "course/addSubSection";
+export const UPDATE_SUB_SECTION = BaseUrl + "course/updateSubSection";
+export const DELETE_SUB_SECTION = BaseUrl + "course/deleteSubSection";
+
+
+export const GET_INSTRUCTOR_COURSES = BaseUrl + "course/getInstructorCourses";
+

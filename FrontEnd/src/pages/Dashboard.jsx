@@ -16,10 +16,10 @@ const Dashboard = () => {
         )
     }
   return (
-    <div className='relative flex'>
+    <div className="relative flex min-h-[calc(100vh-3.5rem)] flex-col md:flex-row">
         <SideBar/>
-        <div>
-            <div className='flex-grow mx-auto w-11/12 max-w-[1000px]'>
+        <div className="flex-1 overflow-auto">
+            <div className="mx-auto w-full max-w-[1000px] py-10 px-4 sm:px-6 lg:px-8">
                 <Outlet/>
             </div>
         </div>

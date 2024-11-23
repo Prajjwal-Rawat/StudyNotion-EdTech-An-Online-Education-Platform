@@ -1,15 +1,24 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { sidebarLinks } from '../../../assets/Data/SideBarLinks';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import RenderSiderBarLinks from './RenderSiderBarLinks';
 import Modal from '../../common/Modal';
 import { CiLogout } from "react-icons/ci";
+import { logout } from '../../../Services/operations/authApis';
+import ClickOutSide from '../../Hooks/ClickOutSide';
+import { useNavigate } from 'react-router-dom';
 
 const SideBar = () => {
 
     const {user, loading: profileLoading} = useSelector((state) => state.Profile);
     const {loading: authLoading} = useSelector((state) => state.auth);
-    const [showModal, setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(null);
+
+    const modalRef = useRef();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    ClickOutSide(modalRef, () => setShowModal(null));
 
     if(authLoading || profileLoading){
         return(
@@ -39,7 +48,14 @@ const SideBar = () => {
         <div className="flex flex-col px-4 space-y-3">
           <RenderSiderBarLinks link={{name:"Setting", path:"/dashboard/settings"}} IconName={"VscSettingsGear"}/>
           <button className="flex items-center gap-2 px-3 font-semibold py-2 text-sm text-richwhite bg-transparent border border-transparent rounded-lg hover:bg-richblack-700 hover:border-yellow-300"
-          onClick={() => setShowModal(true)}>
+            onClick={() => setShowModal({
+            text1: "Are you sure?",
+            text2: "You will be logged out of your account.",
+            btn1Text: "Logout",
+            btn2Text: "Cancel",
+            btn1Handler: () => dispatch(logout(navigate)),
+            btn2Handler: () => setShowModal(null),
+          })}>
            <CiLogout size={20} /> Logout
           </button>
         </div>
@@ -47,7 +63,7 @@ const SideBar = () => {
       </div>
 
           {
-            showModal && <Modal setShowModal={setShowModal} showModal = {showModal}/>
+            showModal && <Modal modalData = {showModal} ref={modalRef}/>
           }
     </div>
   )
