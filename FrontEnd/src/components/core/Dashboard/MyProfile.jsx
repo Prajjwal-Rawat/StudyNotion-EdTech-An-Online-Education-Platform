@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { FaEdit } from "react-icons/fa";
+import { formattedDate } from '../../../utils/formatDate';
 
 const MyProfile = () => {
   const { user } = useSelector((state) => state.Profile);
@@ -78,7 +79,7 @@ const MyProfile = () => {
 
           <div>
           <p className="text-sm text-richblack-300">Date Of Birth</p>
-          <p className="text-sm font-medium">{user?.AdditionalDetails?.DateOfBirth ? user.AdditionalDetails.DateOfBirth : "Add Your DOB"}</p>
+          <p className="text-sm font-medium">{user?.AdditionalDetails?.DateOfBirth ? formattedDate(user.AdditionalDetails.DateOfBirth) : "Add Your DOB"}</p>
           </div>
         </div>
       </div>

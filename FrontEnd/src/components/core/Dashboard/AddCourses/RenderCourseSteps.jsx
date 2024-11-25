@@ -27,16 +27,16 @@ const RenderCourseSteps = () => {
         <div>
             <div className='flex flex-col mb-10 '>
 
-                <div className="flex items-center">
+                <div className="flex items-center justify-between">
                     {steps.map((item) => (
-                        <div key={item.id} className='flex items-center ml-8'>
+                        <div key={item.id} className='flex items-center'>
                             <div className={`w-8 h-8 rounded-full flex items-center justify-center font-semibold ${step === item.id ? "bg-yellow-900 border border-yellow-100 text-yellow-50" : "bg-richblack-700 border border-richblack-400 text-richblack-200"}`}>
                                 {
                                     step > item.id ? (<FaCheck className='bg-yellow-100  rounded-full text-black p-2' size={30} />) : (item.id)
                                 }
                             </div>
                             {
-                                item.id !== steps.length && <span className={`flex items-center ${step > item.id ? "text-yellow-50" : "text-richblack-300"}`}>------------------------</span>
+                                item.id !== steps.length && <span className={`flex items-center ${step > item.id ? "text-yellow-50" : "text-richblack-300"}`}>------------------------------------</span>
                             }
                         </div>
                     ))}

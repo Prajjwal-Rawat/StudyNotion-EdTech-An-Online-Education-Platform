@@ -10,6 +10,7 @@ import HomeCards from '../components/core/HomePage/HomeCards';
 import InstructorSection from '../components/core/HomePage/InstructorSection';
 import { ScrollPage, Animator, batch, Fade, Sticky, MoveOut, ZoomInScrollOut, FadeUp, MoveIn } from 'react-scroll-motion';
 import Tabs from '../components/core/HomePage/Tabs';
+import Footer from '../components/common/Footer';
 
 const Home = () => {
     return (
@@ -151,7 +152,7 @@ const Home = () => {
                 <div className='mx-auto w-11/12 gap-7 max-w-maxContent flex flex-col items-center justify-between'>
                     <div className='flex flex-row mt-[90px] justify-between'>
 
-                        <div className='text-4xl font-semibold w-[45%] '>
+                        <div className='text-4xl text-richblack-100 font-semibold w-[45%] '>
                             Get The Skills You Need For A
                             <HighlightText text={" Job That Is In Demand"}/>
                         </div>
@@ -179,6 +180,7 @@ const Home = () => {
 
                  {/* <ReviewSlider/> */}
              </div>
+             <Footer/>
         </div>
     )
 }

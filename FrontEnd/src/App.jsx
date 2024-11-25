@@ -20,6 +20,8 @@ import Cart from "./components/core/Dashboard/cart/Cart";
 import { useSelector } from "react-redux";
 import AddCourse from "./components/core/Dashboard/AddCourses/AddCourse";
 import MyCourses from "./components/core/Dashboard/InstructorCourses/MyCourses";
+import EditCourse from "./components/core/Dashboard/InstructorCourses/EditCourse";
+import Catalog from "./pages/Catalog";
 
 function App() {
 
@@ -31,6 +33,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/catalog/:catalogName" element = {<Catalog/>}/>
 
         <Route path="/signup" element={
           <OpenRoutes>
@@ -112,7 +115,17 @@ function App() {
               </PrivateRoutes>
               ): <Navigate to="*"/>
             }/>
+
+
+            <Route path="/dashboard/edit-course/:courseId" element = {
+              user?.AccountType === "Instructor" ? (
+              <PrivateRoutes>
+                <EditCourse/>
+              </PrivateRoutes>
+              ): <Navigate to="*"/>
+            }/>
         </Route>
+
       </Routes>
     </div>
   )

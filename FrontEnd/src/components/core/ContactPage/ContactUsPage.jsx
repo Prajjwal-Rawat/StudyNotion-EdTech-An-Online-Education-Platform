@@ -3,6 +3,7 @@ import { AiFillMessage } from "react-icons/ai";
 import { IoGlobeSharp } from "react-icons/io5";
 import { IoCall } from "react-icons/io5";
 import ContactUsForm from "../ContactPage/ContactUsForm";
+import Footer from '../../common/Footer';
 
 const contact = [
   {
@@ -27,6 +28,8 @@ const contact = [
 
 const ContactUsPage = () => {
   return (
+    <div>
+
     <div className='w-11/12 max-w-maxContent mx-auto text-white mt-[5rem]'>
 
       <div className='flex gap-10 justify-between'>
@@ -58,6 +61,8 @@ const ContactUsPage = () => {
         <h1 className='text-3xl font-semibold'>Reviews from other learners</h1>
       </div>
     </div>
+      <Footer/>
+  </div>
   )
 }
 

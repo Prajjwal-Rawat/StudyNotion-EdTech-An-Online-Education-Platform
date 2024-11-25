@@ -9,32 +9,32 @@ const timeline = [
     {
         Logo: logo1,
         heading: "Leadership",
-        Description: "Fully committed to the success company",
+        Description: "Fully committed to the success company.",
 
     },
     {
         Logo: logo2,
-        heading: "Leadership",
-        Description: "Fully committed to the success company",
+        heading: "Strategic Direction",
+        Description: "Empowering teams with clear goals and innovative solutions.",
 
     },
     {
         Logo: logo3,
-        heading: "Leadership",
-        Description: "Fully committed to the success company",
+        heading: "Innovation Catalyst",
+        Description: "Inspiring breakthroughs that shape the future of our industry.",
 
     },
     {
         Logo: logo4,
-        heading: "Leadership",
-        Description: "Fully committed to the success company",
+        heading: "Problem Solver",
+        Description: "Tackling challenges head-on to ensure continuous growth.",
 
     },
 ]
 const TimeLineSection = () => {
   return (
     <div>
-       <div className='flex gap-16 items-center mt-3'>
+       <div className='flex gap-16 items-center mt-3 text-white'>
           <div className='flex flex-col w-[45%]'>
              {
                 timeline.map((ele, index) => {

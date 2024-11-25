@@ -146,7 +146,7 @@ const CourseInfoForm = () => {
             setValue("CoursePrice", course.Price)
             setValue("CourseTags", course.Tags)
             setValue("CourseBenefits", course.WhatYouWillLearn)
-            setValue("CourseCategory", course.Category)
+            setValue("CourseCategory", course.Category._id)
             setValue("CourseRequirements", course.instructions)
             setValue("CourseImage", course.Thumbnail)
             setValue("CourseLanguage", course.Language)

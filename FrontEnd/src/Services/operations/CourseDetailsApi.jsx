@@ -1,5 +1,5 @@
 import {apiConnector} from "../apiConnector";
-import { CREATE_COURSE, CREATE_SECTION, CREATE_SUB_SECTION, DELETE_COURSE, DELETE_SECTION, DELETE_SUB_SECTION, EDIT_COURSE_DETAILS, GET_ALL_COURSE_CATEGORIES, GET_INSTRUCTOR_COURSES, UPDATE_SECTION_DETAILS, UPDATE_SUB_SECTION } from "../Apis";
+import { CREATE_COURSE, CREATE_SECTION, CREATE_SUB_SECTION, DELETE_COURSE, DELETE_SECTION, DELETE_SUB_SECTION, EDIT_COURSE_DETAILS, GET_ALL_COURSE_CATEGORIES, GET_COURSE_DETAILS, GET_INSTRUCTOR_COURSES, UPDATE_SECTION_DETAILS, UPDATE_SUB_SECTION } from "../Apis";
 import {toast} from "react-hot-toast";
 
 
@@ -270,6 +270,35 @@ export const fetchInstructorCourses = async(token) => {
       return result;
     }
 }
+
+
+
+export const getDetailsOfCourse = async(courseId, token) => {
+  let result = null;
+  const toastId = toast.loading("Loading...");
+
+  try{
+    const response = await apiConnector("POST", GET_COURSE_DETAILS, {courseId}, {
+      Authorization: `Bearer ${token}`
+    });
+
+    console.log("Course Details response -> ", response);
+
+    if(!response?.data?.success){
+      throw new Error(response.data.message);
+    }
+
+    result = response?.data?.data;
+  }catch(err){
+    console.log("Failed to get course Details", err);
+    toast.error("Failed to get course details");
+  }finally{
+    toast.dismiss(toastId);
+    return result;
+  }
+}
+
+
 
 
 export const deleteCourse = async(courseId, token) => {

@@ -8,6 +8,7 @@ import aboutImg4 from "../assets/Images/about4.jpg";
 import StatsComponent from '../components/core/AboutPage/StatsComponent';
 import LearningGrid from '../components/core/AboutPage/LearningGrid';
 import ContactFormSection from '../components/core/AboutPage/ContactFormSection';
+import Footer from '../components/common/Footer';
 
 const AboutUs = () => {
     return (
@@ -107,7 +108,7 @@ const AboutUs = () => {
                 </div>
             </section>
 
-        {/* footer */}
+         <Footer/>
         </div>
     )
 }

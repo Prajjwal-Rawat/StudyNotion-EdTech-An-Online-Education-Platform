@@ -10,6 +10,8 @@ import ClickOutSide from "../../../Hooks/ClickOutSide"
 import { deleteCourse } from '../../../../Services/operations/CourseDetailsApi';
 import { fetchInstructorCourses } from '../../../../Services/operations/CourseDetailsApi';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
+import { useNavigate } from 'react-router-dom';
+import {formatDate} from "../../../../Services/formatDate"
 
 const CoursesTable = ({ courses, setCourses }) => {
 
@@ -19,6 +21,7 @@ const CoursesTable = ({ courses, setCourses }) => {
 
     const { token } = useSelector((state) => state.auth)
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const modalRef = useRef();
 
@@ -76,7 +79,7 @@ const CoursesTable = ({ courses, setCourses }) => {
                                         <div className="flex flex-col justify-between">
                                             <p className="text-lg font-semibold text-richblack-5">{course.CourseName}</p>
                                             <p className="text-xs text-richblack-300">{course.CourseDescription}</p>
-                                            <p className="text-[12px] text-white">Created:</p>
+                                            <p className="text-[12px] text-white">Created: {formatDate(course.createdAt)}</p>
 
                                             {
                                                 course.status === "Draft" ? (
@@ -98,7 +101,8 @@ const CoursesTable = ({ courses, setCourses }) => {
 
                                     <Td className="text-sm font-medium text-richblack-100">
                                         <button className="px-2 transition-all duration-200 hover:scale-110 hover:text-caribbeangreen-300"
-                                            disabled={loading}>
+                                            disabled={loading}
+                                            onClick={() => navigate(`/dashboard/edit-course/${course._id}`)}>
                                             <CiEdit size={20} />
                                         </button>
 
