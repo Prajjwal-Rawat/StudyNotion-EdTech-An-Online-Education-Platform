@@ -5,7 +5,6 @@ import RatingStars from '../../common/RatingStars';
 
 const CourseCard = ({course, Height}) => {
 
-
     const [avgReviewCount, setAvgReviewCount] = useState(0);
     
     useEffect(() => {
@@ -13,7 +12,8 @@ const CourseCard = ({course, Height}) => {
         setAvgReviewCount(count);
     },[course])
 
-    console.log("instructor->", course?.Instructor)
+
+
     return (
             <Link to={`/courses/${course._id}`}>
                 <div>

@@ -20,9 +20,11 @@ const EnrollCourses = () => {
     useEffect(() => {
        getEnrolledCourses();
     }, [])
+
+
   return (
     <div className='text-white'>
-        <div>Enroll Courses</div>
+        <div className="text-3xl text-richblack-50">Enroll Courses</div>
 
         {
             !enrolledCourses ? (
@@ -34,31 +36,37 @@ const EnrollCourses = () => {
                 </div>
             )
             : !enrolledCourses.length ? (
-                <p>You Have not enrolled in any course yet</p>
+                <p  className="grid h-[10vh] w-full place-content-center text-richblack-5">You Have not enrolled in any course yet</p>
             ): (
-                <div>
-                    <div>
-                        <p>Course Name</p>
-                        <p>Durations</p>
-                        <p>Progress</p>
+                <div className="my-8 text-richblack-5">
+                    <div className="flex rounded-t-lg bg-richblack-500 ">
+                        <p className="w-[45%] px-5 py-3">Course Name</p>
+                        <p className="w-1/4 px-2 py-3">Durations</p>
+                        <p className="flex-1 px-2 py-3">Progress</p>
                     </div>
 
                     {
-                        enrolledCourses.map((course, index) => (
-                            <div key={index}>
-                                <div>
-                                    <img src= {course.Thumbnail} />
-                                    <div>
-                                        <p>{course.CourseName}</p>
-                                        <p>{course.CourseDescription}</p>
+                        enrolledCourses.map((course, index, arr) => (
+                            <div key={index} className={`flex items-center border border-richblack-700 ${
+                                index === arr.length - 1 ? "rounded-b-lg" : "rounded-none"
+                              }`}>
+                                <div  className="flex w-[45%] cursor-pointer items-center gap-4 px-5 py-3">
+                                    <img src= {course.Thumbnail}  className="h-14 w-14 rounded-lg object-cover" />
+                                    <div className="flex max-w-xs flex-col gap-2">
+                                        <p className="font-semibold">{course.CourseName}</p>
+                                        <p className="text-xs text-richblack-300">
+                                            {course.CourseDescription.length > 50 
+                                            ? `${course.CourseDescription.slice(0,50)}...`
+                                            : course.CourseDescription}
+                                        </p>
                                     </div>
                                 </div>
 
-                                <div>
-                                    {course.TimeDuration}
+                                <div className="w-1/4 px-2 py-3">
+                                    {/* {course.TimeDuration} */} 2h23min
                                 </div>
 
-                                <div>
+                                <div className="flex w-1/5 flex-col gap-2 px-2 py-3">
                                     <p>Progress: {course.progressPercentage || 0}%</p>
                                     <ProgressBar
                                     completed={course.progressPercentage || 0}
