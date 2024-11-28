@@ -82,14 +82,14 @@ const NavBar = () => {
           </ul>
         </nav>
 
-        <div className='flex gap-5 items-center'>
+        <div className='flex gap-8 items-center'>
           {
-            user && user?.accountType != "Instructor" && (
+            user && user?.AccountType !== "Instructor" && (
               <Link to="/dashboard/cart" className='relative'>
                 <FaCartShopping className='text-2xl text-white' />
                 {
                   totalItems > 0 && (
-                    <span>
+                    <span className=' absolute top-2 left-5 text-white  w-5 h-5 text-center  font-semibold rounded-full'>
                       {totalItems}
                     </span>
                   )

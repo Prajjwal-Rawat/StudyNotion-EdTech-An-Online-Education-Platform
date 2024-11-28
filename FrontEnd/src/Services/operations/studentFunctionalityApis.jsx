@@ -1,6 +1,7 @@
 import {toast} from "react-hot-toast";
 import {apiConnector} from "../apiConnector";
 import {COURSE_PAYMENT_API, SEND_PAYMENT_MAIL, COURSE_VERIFY_API} from "../Apis";
+import { removeFromCart, resetCart } from "../../Slices/CartSlice";
 
 function loadScript(src){
     return new Promise((resolve) => {
@@ -19,8 +20,9 @@ function loadScript(src){
 
 
 
-export const buyCourse = async(coursesId, token, navigate, dispatch, userDetails) => {
+export const buyCourse = async(coursesId, token, navigate, dispatch, userDetails, singleCourse = false) => {
    const toastId = toast.loading("Loding...");
+   console.log("course id in api call", coursesId);
    try{
       const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js");
       if(!res){
@@ -54,7 +56,7 @@ export const buyCourse = async(coursesId, token, navigate, dispatch, userDetails
         },
         handler: function(response){
             sendPaymentSuccessMail(response, orderResponse.data.data.amount, token);
-            verifyPayment({...response,coursesId}, token, navigate, dispatch);
+            verifyPayment({...response,coursesId}, token, navigate, dispatch, singleCourse);
         }
       }
 
@@ -91,7 +93,7 @@ const sendPaymentSuccessMail = async(response, amount, token) => {
 }
 
 
-const verifyPayment = async(bodyData, token, navigate, dispatch) => {
+const verifyPayment = async(bodyData, token, navigate, dispatch, singleCourse) => {
   const toastId = toast.loading("Verifying Payment...");
 
   try{
@@ -105,8 +107,7 @@ const verifyPayment = async(bodyData, token, navigate, dispatch) => {
 
     toast.success("Payment Successfull, You are Added to the course");
     navigate("/dashboard/enrolled-courses");
-    // dispatch(resetCart());
-
+    singleCourse ? (dispatch(removeFromCart(bodyData.coursesId[0]))) : dispatch(resetCart()); 
   }catch(Err){
     console.log("Payment Failed, Could not verify payment", Err);
     toast.error("Payment Failed Could not verify payment");

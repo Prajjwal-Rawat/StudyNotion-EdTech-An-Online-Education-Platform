@@ -13,14 +13,13 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 import { useNavigate } from 'react-router-dom';
 import {formatDate} from "../../../../Services/formatDate"
 
-const CoursesTable = ({ courses, setCourses }) => {
+const CoursesTable = ({ courses, setCourses, timeDuration }) => {
 
 
     const [loading, setLoading] = useState(false);
     const [showmodal, setShowModal] = useState(null);
 
-    const { token } = useSelector((state) => state.auth)
-    const dispatch = useDispatch();
+    const { token } = useSelector((state) => state.auth);
     const navigate = useNavigate();
 
     const modalRef = useRef();
@@ -34,7 +33,7 @@ const CoursesTable = ({ courses, setCourses }) => {
 
        const result = await fetchInstructorCourses(token);
        if(result){
-           setCourses(result);
+           setCourses(result.instructorCourses);
        }
        setLoading(false);
        setShowModal(null);
@@ -78,7 +77,10 @@ const CoursesTable = ({ courses, setCourses }) => {
                                         <img src={course.Thumbnail} className='h-[150px] w-[220px] rounded-lg object-cover' />
                                         <div className="flex flex-col justify-between">
                                             <p className="text-lg font-semibold text-richblack-5">{course.CourseName}</p>
-                                            <p className="text-xs text-richblack-300">{course.CourseDescription}</p>
+                                            <p className="text-xs text-richblack-300">{course.CourseDescription.length > 50 
+                                                                                        ? course.CourseDescription.slice(0,50) + "..." 
+                                                                                        : course.CourseDescription}
+                                            </p>
                                             <p className="text-[12px] text-white">Created: {formatDate(course.createdAt)}</p>
 
                                             {
@@ -92,7 +94,9 @@ const CoursesTable = ({ courses, setCourses }) => {
                                     </Td>
 
                                     <Td className="text-sm font-medium text-richblack-100">
-                                        2hr 30min
+                                        {
+                                            timeDuration[course._id]
+                                        }
                                     </Td>
 
                                     <Td className="text-sm font-medium text-richblack-100">

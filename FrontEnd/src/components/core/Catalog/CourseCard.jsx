@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import GetAvgRating from '../../../utils/avgRating';
 import RatingStars from '../../common/RatingStars';
+import { useSelector } from 'react-redux';
 
 const CourseCard = ({course, Height}) => {
 
     const [avgReviewCount, setAvgReviewCount] = useState(0);
+    const {token} = useSelector((state) => state.auth);
     
     useEffect(() => {
         const count = GetAvgRating(course.RatingAndReviews);
@@ -15,7 +17,7 @@ const CourseCard = ({course, Height}) => {
 
 
     return (
-            <Link to={`/courses/${course._id}`}>
+            <Link to={token ? `/courses/${course._id}` : '/login'}>
                 <div>
                     <div className='rounded-lg'>
                         <img src= {course?.Thumbnail} alt='course.png'

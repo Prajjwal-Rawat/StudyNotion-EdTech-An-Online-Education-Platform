@@ -8,6 +8,7 @@ import { fetchInstructorCourses } from '../../../../Services/operations/CourseDe
 const MyCourses = () => {
 
     const [courses, setCourses] = useState([]);
+    const [timeDuration, setTimeDuration] = useState({})
 
     const {token} = useSelector((state) => state.auth);
     const navigate = useNavigate();
@@ -17,7 +18,8 @@ const MyCourses = () => {
         const result = await fetchInstructorCourses(token);
 
         if(result){
-            setCourses(result);
+            setCourses(result.instructorCourses);
+            setTimeDuration(result.timeDurationObj);
         }
       }
       fetchCourses();
@@ -34,7 +36,7 @@ const MyCourses = () => {
         </div>
 
         {
-            courses && <CoursesTable courses = {courses} setCourses = {setCourses}/>
+            courses && <CoursesTable courses = {courses} setCourses = {setCourses} timeDuration = {timeDuration}/>
         }
     </div>
   )
