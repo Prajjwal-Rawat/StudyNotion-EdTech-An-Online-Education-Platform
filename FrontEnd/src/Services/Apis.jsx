@@ -29,6 +29,7 @@ export const GET_ENROLLED_COURSES_API = BaseUrl + "profile/getEnrolledCourses";
 
 export const GET_ALL_COURSE_CATEGORIES = BaseUrl + "course/showAllCategories";
 export const GET_CATAGORIES_DETAILS = BaseUrl + "course/getCategoryPageDetails";
+export const GET_FULL_COURSE_DETAILS = BaseUrl + "course/getFullCourseDetails";
 export const EDIT_COURSE_DETAILS = BaseUrl + "course/editCourse";
 export const CREATE_COURSE = BaseUrl + "course/createCourse";
 export const DELETE_COURSE  = BaseUrl + "course/deleteCourse";
@@ -46,6 +47,12 @@ export const GET_COURSE_DETAILS = BaseUrl + "course/getCourseDetails";
 export const COURSE_PAYMENT_API = BaseUrl + "payment/capturePayment";
 export const COURSE_VERIFY_API = BaseUrl + "payment/verifySignature";
 export const SEND_PAYMENT_MAIL = BaseUrl + "payment/sendPaymentMail";
+
+//Rating & Reviews
+export const ADD_RATING_AND_REVIEW = BaseUrl + "course/addRating";
+
+//course progress
+export const UPDATE_COURSE_PROGRESS = BaseUrl + "course/updateCourseProgress";
 
 
 

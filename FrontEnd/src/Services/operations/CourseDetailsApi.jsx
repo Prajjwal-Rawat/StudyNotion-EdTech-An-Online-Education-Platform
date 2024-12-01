@@ -1,5 +1,5 @@
 import {apiConnector} from "../apiConnector";
-import { CREATE_COURSE, CREATE_SECTION, CREATE_SUB_SECTION, DELETE_COURSE, DELETE_SECTION, DELETE_SUB_SECTION, EDIT_COURSE_DETAILS, GET_ALL_COURSE_CATEGORIES, GET_COURSE_DETAILS, GET_INSTRUCTOR_COURSES, UPDATE_SECTION_DETAILS, UPDATE_SUB_SECTION } from "../Apis";
+import { CREATE_COURSE, CREATE_SECTION, CREATE_SUB_SECTION, DELETE_COURSE, DELETE_SECTION, DELETE_SUB_SECTION, EDIT_COURSE_DETAILS, GET_ALL_COURSE_CATEGORIES, GET_COURSE_DETAILS, GET_FULL_COURSE_DETAILS, GET_INSTRUCTOR_COURSES, UPDATE_SECTION_DETAILS, UPDATE_SUB_SECTION } from "../Apis";
 import {toast} from "react-hot-toast";
 
 
@@ -300,6 +300,35 @@ export const getDetailsOfCourse = async(courseId, token) => {
 
 
 
+export const getAllCourseDetails = async(courseId, token) => {
+  const toastId = toast.loading("Loading...");
+  let result = null;
+
+  try{
+      const response = await apiConnector("POST", GET_FULL_COURSE_DETAILS, {courseId}, {
+        Authorization: `Bearer ${token}`
+      });
+
+      console.log("Full course details response -> ", response);
+
+      if(!response?.data?.success){
+        throw new Error(response.data.message);
+      }
+
+      result = response?.data?.data;
+      
+  }catch(err){
+    console.log("Failed to get All course details ", err);
+    toast.error("Failed to get Course Details");
+  }finally{
+    toast.dismiss(toastId);
+    return result;
+  }
+}
+
+
+
+
 
 export const deleteCourse = async(courseId, token) => {
   const toastId = toast.loading("Deleting...");
@@ -324,5 +353,3 @@ export const deleteCourse = async(courseId, token) => {
   }
 }
 
-
-// after successfully created created course after publish setCourse(null); and setSteps(null)

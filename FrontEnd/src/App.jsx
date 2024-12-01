@@ -23,6 +23,8 @@ import MyCourses from "./components/core/Dashboard/InstructorCourses/MyCourses";
 import EditCourse from "./components/core/Dashboard/InstructorCourses/EditCourse";
 import Catalog from "./pages/Catalog";
 import CourseDetails from "./pages/CourseDetails";
+import ViewCourse from "./pages/ViewCourse";
+import VideoDetails from "./components/core/ViewCourse/VideoDetails";
 
 function App() {
 
@@ -72,7 +74,7 @@ function App() {
         <Route path="*" element={<Error/>} />
 
 
-        <Route path="/dashboard" element={<PrivateRoutes> <Dashboard/> </PrivateRoutes>}>
+        <Route element={<PrivateRoutes> <Dashboard/> </PrivateRoutes>}>
            <Route path="/dashboard/my-profile" element={
             <PrivateRoutes>
              <MyProfile/>
@@ -126,6 +128,17 @@ function App() {
               </PrivateRoutes>
               ): <Navigate to="*"/>
             }/>
+        </Route>
+
+
+        <Route element = {<PrivateRoutes> <ViewCourse/> </PrivateRoutes>}>
+        <Route path="view-course/:courseId/section/:sectionId/sub-section/:subSectionId" element = {
+          user?.AccountType === "Student" ? (
+            <PrivateRoutes>
+            <VideoDetails/>
+          </PrivateRoutes>
+          ): <Navigate to="*"/>
+        } />
         </Route>
 
       </Routes>
