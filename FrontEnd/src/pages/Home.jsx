@@ -11,6 +11,7 @@ import InstructorSection from '../components/core/HomePage/InstructorSection';
 import { ScrollPage, Animator, batch, Fade, Sticky, MoveOut, ZoomInScrollOut, FadeUp, MoveIn } from 'react-scroll-motion';
 import Tabs from '../components/core/HomePage/Tabs';
 import Footer from '../components/common/Footer';
+import ReviewSlider from '../components/common/ReviewSlider';
 
 const Home = () => {
     return (
@@ -173,12 +174,11 @@ const Home = () => {
             </div>
 
              {/* section 3 */}
-             <div className='flex flex-col w-11/12 mx-auto max-w-maxContent items-center justify-between gap-8 bg-richblack-900 text-white'>
+             <div className='flex flex-col w-11/12 mx-auto max-w-maxContent items-center justify-between bg-richblack-900 text-white'>
                  <InstructorSection/>
 
-                 <h2>Review From Other Learners</h2>
-
-                 {/* <ReviewSlider/> */}
+                 <h2 className='text-2xl font-semibold mt-12'>Review From Other Learners</h2>
+                 <ReviewSlider/>
              </div>
              <Footer/>
         </div>

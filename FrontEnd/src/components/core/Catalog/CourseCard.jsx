@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import GetAvgRating from '../../../utils/avgRating';
 import RatingStars from '../../common/RatingStars';
 import { useSelector } from 'react-redux';
+import ReactStars from "react-stars"
 
 const CourseCard = ({course, Height}) => {
 
@@ -15,7 +16,7 @@ const CourseCard = ({course, Height}) => {
     },[course])
 
 
-
+    
     return (
             <Link to={token ? `/courses/${course._id}` : '/login'}>
                 <div>

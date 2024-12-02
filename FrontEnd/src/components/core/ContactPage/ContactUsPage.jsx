@@ -4,6 +4,7 @@ import { IoGlobeSharp } from "react-icons/io5";
 import { IoCall } from "react-icons/io5";
 import ContactUsForm from "../ContactPage/ContactUsForm";
 import Footer from '../../common/Footer';
+import ReviewSlider from '../../common/ReviewSlider';
 
 const contact = [
   {
@@ -59,6 +60,7 @@ const ContactUsPage = () => {
 
       <div className='flex flex-col items-center mt-[8rem]'>
         <h1 className='text-3xl font-semibold'>Reviews from other learners</h1>
+        <ReviewSlider/>
       </div>
     </div>
       <Footer/>

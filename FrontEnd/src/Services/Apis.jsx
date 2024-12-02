@@ -50,6 +50,7 @@ export const SEND_PAYMENT_MAIL = BaseUrl + "payment/sendPaymentMail";
 
 //Rating & Reviews
 export const ADD_RATING_AND_REVIEW = BaseUrl + "course/addRating";
+export const GET_ALL_RATING_AND_REVIEWS = BaseUrl + "course/getAllReviews";
 
 //course progress
 export const UPDATE_COURSE_PROGRESS = BaseUrl + "course/updateCourseProgress";

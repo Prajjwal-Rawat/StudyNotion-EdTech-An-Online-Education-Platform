@@ -9,6 +9,7 @@ import StatsComponent from '../components/core/AboutPage/StatsComponent';
 import LearningGrid from '../components/core/AboutPage/LearningGrid';
 import ContactFormSection from '../components/core/AboutPage/ContactFormSection';
 import Footer from '../components/common/Footer';
+import ReviewSlider from '../components/common/ReviewSlider';
 
 const AboutUs = () => {
     return (
@@ -102,9 +103,9 @@ const AboutUs = () => {
             </section>
 
             <section>
-                <div className='flex flex-col items-center mt-10'>
+                <div className='flex flex-col items-center mt-12'>
                     <h1 className='text-2xl font-semibold'>Review From other Learners</h1>
-                    {/* <ReviewSlider/> */}
+                    <ReviewSlider/>
                 </div>
             </section>
 
