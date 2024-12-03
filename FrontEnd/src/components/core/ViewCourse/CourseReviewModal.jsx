@@ -67,6 +67,7 @@ const CourseReviewModal = ({ setReviewModal }) => {
                 <textarea className="bg-richblack-600 min-h-[140px] rounded-[0.5rem] mt-1 text-white w-full p-[14px] border-b-2 border-richblack-100"
                 name="courseExperience" 
                 id="review"
+                typeof='text'
                 placeholder='Give Your Review'
                 {...register("courseExperience", {required:true})}
                 />

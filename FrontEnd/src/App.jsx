@@ -25,6 +25,7 @@ import Catalog from "./pages/Catalog";
 import CourseDetails from "./pages/CourseDetails";
 import ViewCourse from "./pages/ViewCourse";
 import VideoDetails from "./components/core/ViewCourse/VideoDetails";
+import InstructorDashboard from "./components/core/Dashboard/InstructorDashboard/InstructorDashboard";
 
 function App() {
 
@@ -79,6 +80,14 @@ function App() {
             <PrivateRoutes>
              <MyProfile/>
             </PrivateRoutes>
+            }/>
+
+           <Route path="/dashboard/instructor" element={
+            user?.AccountType === "Instructor" ? (
+              <PrivateRoutes>
+              <InstructorDashboard/>
+             </PrivateRoutes>
+            ): <Navigate to="*"/>
             }/>
 
            <Route path="/dashboard/settings" element={

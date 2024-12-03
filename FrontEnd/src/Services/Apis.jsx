@@ -55,6 +55,9 @@ export const GET_ALL_RATING_AND_REVIEWS = BaseUrl + "course/getAllReviews";
 //course progress
 export const UPDATE_COURSE_PROGRESS = BaseUrl + "course/updateCourseProgress";
 
+//instructor dashboard
+export const GET_INSTRUCTOR_DASHBOARD_DETAILS = BaseUrl + "profile/getInstructorDashboardDetails";
+
 
 
 
