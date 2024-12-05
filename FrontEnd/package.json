@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "start": "concurrently -n \"client,server\" -c \"bgBlue,bgYellow\" \"npm run client\" \"npm run server\"",
     "client": "vite",
-    "server": "cd ./backend && npm run dev"
+    "server": "cd ../backend && npm run dev"
   },
   "dependencies": {
     "@mui/icons-material": "^6.1.8",
