@@ -37,7 +37,7 @@ const Template = ({title, desc1, desc2, formType, imgUrl}) => {
 
                </div>
 
-               <div className="relative w-11/12 max-w-[450px]">
+               <div className="relative w-11/12 max-w-[450px] hidden lg:block">
                 <img className="py-8" src={frameImg} alt="loading" width={558} height={504} loading="lazy"/>
                 <img className="absolute -top-6 right-6 py-8"
                 src={imgUrl} alt="loading" width={558} height={490} loading="lazy"/>

@@ -47,14 +47,14 @@ const Catalog = () => {
     
 
   return (
-    <div className=" box-content bg-richblack-800">
+    <div className="box-content bg-richblack-800">
         <div className="mx-auto flex min-h-[260px] max-w-maxContentTab flex-col justify-center gap-4 lg:max-w-maxContent ">
             <p  className="text-sm text-richblack-300">Home/ Catalog/ <span>{catalogPageData?.data?.selectedCategory?.Category}</span></p>
             <p className="text-3xl text-richblack-5">{catalogPageData?.data?.selectedCategory?.Category}</p>
             <p className="max-w-[870px] text-richblack-200">{catalogPageData?.data?.selectedCategory?.Description}</p>
         </div>
 
-        <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
+        <div className=" mx-auto box-content lg:w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
             {/* section 1 */}
             <div className="section_heading">
                 <h1 className='text-2xl text-white font-semibold'>Course to Get You Started</h1>
@@ -88,10 +88,10 @@ const Catalog = () => {
             </div>
 
            {/*section 3  */}
-            <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
+            <div className=" mx-auto box-content lg:w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
                 <div className='text-2xl text-white font-semibold'>Frequently Bought</div>
                 <div className='py-8'>
-                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5'>
+                    <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-x-5'>
 
                         {
                             catalogPageData?.data?.topSellingCourses?.slice(0,4).map((course, index) => (

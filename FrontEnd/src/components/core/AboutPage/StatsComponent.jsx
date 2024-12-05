@@ -11,14 +11,14 @@ const StatsComponent = () => {
 
   return (
     <section>
-        <div className='bg-richblack-300 py-9 px-[15rem] mt-16'>
+        <div className='bg-richblack-300 py-9 lg:px-[15rem] mt-16'>
             <div className='flex justify-between items-centers font-bold text-xl'>
                 {
                     stats.map((data, index) => {
                         return(
                             <div key={index}>
-                                <h1 className='text-center text-2xl'>{data.count}</h1>
-                                <h2 className='text-richblack-600'>{data.label}</h2>
+                                <h1 className='text-center lg:text-2xl'>{data.count}</h1>
+                                <h2 className='text-richblack-600 text-sm lg:text-lg'>{data.label}</h2>
                             </div>
                         )
                     })

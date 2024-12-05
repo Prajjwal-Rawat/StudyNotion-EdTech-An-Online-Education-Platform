@@ -8,9 +8,9 @@ import { FaArrowRightLong } from "react-icons/fa6";
 const InstructorSection = () => {
   return (
     <div>
-       <div className='flex flex-row gap-20 items-center'>
+       <div className='flex flex-row gap-20 lg:items-center'>
             <div className='w-[50%] mt-[100px]'>
-                <img src= {InstructorImg} className='w-[50rem] h-[40rem] shadow-instructorShadow' />
+                <img src= {InstructorImg} className='lg:w-[50rem] lg:h-[40rem] h-fit shadow-instructorShadow' />
             </div>
 
             <div className='flex flex-col w-[50%] gap-10'>

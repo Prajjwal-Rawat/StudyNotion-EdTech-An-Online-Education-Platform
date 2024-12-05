@@ -33,8 +33,8 @@ const ContactUsPage = () => {
 
     <div className='w-11/12 max-w-maxContent mx-auto text-white mt-[5rem]'>
 
-      <div className='flex gap-10 justify-between'>
-        <div className='flex flex-col gap-10 bg-richblack-800 p-10 w-[40%] h-fit rounded-xl'>
+      <div className='lg:flex gap-10 justify-between'>
+        <div className='flex flex-col gap-10 bg-richblack-800 p-10 lg:w-[40%] h-fit rounded-xl'>
           {
             contact.map((ele, index) => {
               return (
@@ -50,7 +50,7 @@ const ContactUsPage = () => {
             })
           }
         </div>
-        <div className='flex flex-col border p-16 h-fit w-[60%] rounded-xl'>
+        <div className='flex flex-col border p-16 h-fit lg:w-[60%] rounded-xl mt-8 lg:mt-0'>
           <h1 className='text-4xl font-semibold'>Got a Idea? We've got the skills. Let's team up</h1>
           <p>Tell us more about yourself and what you're got in mind</p>
           <ContactUsForm />

@@ -7,11 +7,11 @@ const CodeBlocks = ({
   position, heading, subHeading, Hbtn1, Hbtn2, codeBlock, backgroundGradient, codeColor
 }) => {
   return (
-    <div className={`flex ${position} my-20  justify-between `}>
+    <div className={`lg:flex ${position} my-20  lg:justify-between `}>
 
       {/* section 1 */}
 
-      <div className='flex flex-col w-[50%] gap-8'>
+      <div className='flex flex-col lg:w-[50%] gap-8'>
         {heading}
         <div className='font-bold text-richblack-300 '>
           {subHeading}
@@ -34,9 +34,9 @@ const CodeBlocks = ({
       {/* section 2 */}
 
 
-      <div className='h-fit flex flex-row w-screen lg:w-[500px] py-4 relative'>
+      <div className='h-fit flex flex-row lg:w-[500px] py-4 mt-10 lg:mt-0 relative'>
 
-        <span className={`${backgroundGradient} opacity-20 w-[270px] h-[200px] rounded-full absolute top-[-10px] left-[-10px]`}></span>
+        <span className={`${backgroundGradient} opacity-20 w-screen lg:w-[270px] h-[200px] rounded-full absolute left-[-20px] lg:top-[-10px] lg:left-[-10px]`}></span>
         <div className='text-center flex flex-col w-[10%] text-richblack-400 font-inter font-bold'>
           <p>1</p>
           <p>2</p>
@@ -51,7 +51,7 @@ const CodeBlocks = ({
           <p>11</p>
         </div>
 
-        <div className={`w-[90%] flex flex-col gap-2 font-bold font-mono ${codeColor} pr-2`}>
+        <div className={`lg:w-[90%]  flex flex-col gap-2 font-bold font-mono ${codeColor} pr-2`}>
 
           <TypeAnimation
             sequence={[codeBlock, 1000, ""]}

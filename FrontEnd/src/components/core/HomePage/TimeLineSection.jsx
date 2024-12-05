@@ -9,7 +9,7 @@ const timeline = [
     {
         Logo: logo1,
         heading: "Leadership",
-        Description: "Fully committed to the success company.",
+        Description: "Fully committed to the success company. And Always Supportive",
 
     },
     {
@@ -34,13 +34,13 @@ const timeline = [
 const TimeLineSection = () => {
   return (
     <div>
-       <div className='flex gap-16 items-center mt-3 text-white'>
-          <div className='flex flex-col w-[45%]'>
+       <div className='lg:flex gap-16 items-center mt-3 text-white'>
+          <div className='flex flex-col lg:w-[45%]'>
              {
                 timeline.map((ele, index) => {
                    return(
                     <div className='flex flex-row gap-2 items-center' key={index}>
-                         <div className='w-[130px] h-[120px] justify-center flex flex-col items-center bg-none'>
+                         <div className='lg:w-[130px] lg:h-[120px] w-[90px] h-[90px] justify-center flex flex-col items-center bg-none'>
                            <img src= {ele.Logo}/>
                            {/* <p className='w-[1px] h-[300px] border border-black border-dashed'></p>  */}
                          </div>
@@ -56,18 +56,18 @@ const TimeLineSection = () => {
           </div>
 
 
-          <div className='relative w-[55%]'>
+          <div className='relative lg:w-[55%] mt-6 lg:mt-0 w-screen'>
               <img src={timelineImg} className=' shadow-md shadow-black object-cover h-fit' />
 
-              <div className='absolute bg-caribbeangreen-700 py-6 px-2 translate-x-32 translate-y-[-50%] flex text-white uppercase'>
+              <div className='absolute bg-caribbeangreen-700 py-6 lg:px-2 translate-x-5 lg:translate-x-32 translate-y-[-50%] flex text-white uppercase'>
                   <div className='flex gap-5 items-center px-7 border-r-2 border-caribbeangreen-25'>
-                     <h1 className='text-3xl font-bold'>10</h1>
-                     <p className='text-caribbeangreen-25'>Years of <br/> Experience</p>
+                     <h1 className='lg:text-3xl font-bold'>10</h1>
+                     <p className='text-caribbeangreen-25 lg:text-md text-sm'>Years of <br/> Experience</p>
                   </div>
 
                   <div className='flex gap-5 items-center px-7'>
-                     <h1 className='text-3xl font-bold'>200</h1>
-                     <p className='text-caribbeangreen-25'>Types of <br/> courses</p>
+                     <h1 className='lg:text-3xl font-bold'>200</h1>
+                     <p className='text-caribbeangreen-25 lg:text-md text-sm'>Types of <br/> courses</p>
 
                   </div>
 

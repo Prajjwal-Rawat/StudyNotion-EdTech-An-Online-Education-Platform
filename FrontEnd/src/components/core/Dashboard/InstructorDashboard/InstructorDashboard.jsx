@@ -85,12 +85,12 @@ const InstructorDashboard = () => {
                             <div className='flex gap-x-3 mt-2'>
                                 {
                                     courses.slice(0,3).map((course, index) => (
-                                        <div className=''>
+                                        <div className='w-[110px] lg:w-full'>
                                             <img src={course.Thumbnail} alt="thumbnail"
-                                            className="h-[201px] w-[300px] rounded-md object-cover" />
+                                            className="lg:h-[201px] lg:w-[300px] rounded-md object-cover" />
                                             <div className='mt-1'>
                                                 <p className='font-semibold'>{course.CourseName}</p>
-                                                <div className='flex gap-x-1 mt-1 text-richblack-300'>
+                                                <div className='lg:flex gap-x-1 mt-1 text-richblack-300'>
                                                     <p>{course.StudentEnrolled.length} students</p>
                                                     <p>|</p>
                                                     <p>Rs.{course.Price}</p>

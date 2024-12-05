@@ -33,10 +33,9 @@ const ReviewSlider = () => {
         return <div>Loading...</div>
     }
 
-    console.log("review", reviews);
 
     return (
-    <div className="w-11/12 max-w-screen-lg mx-auto">
+    <div className="lg:w-11/12 w-screen max-w-screen-lg lg:mx-auto">
       <Swiper
         effect="coverflow"
         grabCursor={true}
@@ -58,7 +57,7 @@ const ReviewSlider = () => {
       >
         {reviews.map((review, index) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-col p-5 h-[190px]  bg-gray-700 text-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div className="flex flex-col p-5 -ml-20 w-fit lg:w-[400px] lg:h-[190px]  bg-gray-700 text-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
               {/* User Info */}
               <div className="flex mb-4">
                 <img src={review.User.UserImageUrl} className='max-w-9 max-h-9 rounded-full object-cover'/>

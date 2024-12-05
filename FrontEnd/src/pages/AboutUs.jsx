@@ -23,10 +23,10 @@ const AboutUs = () => {
                         brighter future by offering cutting-edge courses, leveraging emerging technologies, and nurturing a vibrant learning community.</p>
                 </div>
 
-                <div className=' absolute flex top-[21rem] right-[17rem] gap-x-10 '>
+                <div className='absolute flex lg:top-[21rem] lg:right-[17rem] top-[37rem] right-[40px] gap-x-10 '>
                     <img src={aboutImg1} width={320} className='shadow-shiny-pink hover:scale-105 transition-all duration-300'/>
-                    <img src={aboutImg2} width={320} className='shadow-shiny-yellow hover:scale-105 transition-all duration-300'/>
-                    <img src={aboutImg3} width={320} className='shadow-shiny-blue hover:scale-105 transition-all duration-300'/>
+                    <img src={aboutImg2} width={320} className='shadow-shiny-yellow hover:scale-105 transition-all duration-300 hidden lg:block'/>
+                    <img src={aboutImg3} width={320} className='shadow-shiny-blue hover:scale-105 transition-all duration-300 hidden lg:block'/>
                 </div>
             </section>
 

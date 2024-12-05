@@ -45,7 +45,7 @@ const ContactUsForm = () => {
     return (
         <form onSubmit={handleSubmit(submitContactFormDetails)} className='flex flex-col gap-y-4 mt-6'>
 
-            <div className='flex gap-5'>
+            <div className='lg:flex gap-5'>
                 <label htmlFor="firstName" className='w-full text-[0.875rem] text-slate-100'>First Name
                     <input className="bg-richblack-800 rounded-[0.5rem] mt-1 text-slate-400 w-full p-[14px] border-b-2 border-richblack-100"
                         type="text"
