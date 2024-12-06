@@ -2,6 +2,14 @@
   <h1><strong>StudyNotion - EdTech Online Education Platform</strong></h1>
 </p>
 
+<p align="center">
+  <a href="https://study-notion-ed-tech-an-online-education-platform-hdjsubxky.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20Demo-Click%20Here-brightgreen?style=for-the-badge" alt="Live Demo">
+  </a>
+</p>
+
+<p align="center"> <img src="FrontEnd/src/assets/Screenshots/StudyNotion-Home.jpg" alt="Student Dashboard" width="700">
+
 ## **Features**
 
 - **Student Dashboard**: Track progress, view courses, and manage personal details.
