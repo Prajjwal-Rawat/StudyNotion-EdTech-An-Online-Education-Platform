@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
     origin:"https://study-notion-ed-tech-an-online-education-platform.vercel.app",
-    credentials:true
+    credentials: true 
 }));
 
 app.use(fileUpload({

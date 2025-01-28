@@ -60,10 +60,10 @@ const ReviewSlider = () => {
             <div className="flex flex-col p-5 -ml-20 w-fit lg:w-[400px] lg:h-[190px]  bg-gray-700 text-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
               {/* User Info */}
               <div className="flex mb-4">
-                <img src={review.User.UserImageUrl} className='max-w-9 max-h-9 rounded-full object-cover'/>
+                <img src={review?.User?.UserImageUrl} className='max-w-9 max-h-9 rounded-full object-cover'/>
                 <div className="ml-4">
-                  <p className="text-lg font-semibold">{review.User.FirstName} {review.User.LastName}</p>
-                  <p className="text-sm text-gray-400">{review.course.CourseName}</p>
+                  <p className="text-lg font-semibold">{review?.User?.FirstName} {review?.User?.LastName}</p>
+                  <p className="text-sm text-gray-400">{review?.course?.CourseName}</p>
                 </div>
               </div>
 
