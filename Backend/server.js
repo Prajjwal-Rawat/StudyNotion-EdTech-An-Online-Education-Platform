@@ -27,7 +27,7 @@ connectCloudinary();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin:"https://study-notion-ed-tech-an-online-education-platform-hdjsubxky.vercel.app",
+    origin:"https://study-notion-ed-tech-an-online-education-platform.vercel.app",
     credentials:true
 }));
 
