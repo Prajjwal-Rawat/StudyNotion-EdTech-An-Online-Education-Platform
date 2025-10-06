@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://study-notion-ed-tech-an-online-education-platform-hdjsubxky.vercel.app" target="_blank">
+  <a href="https://study-notion-ed-tech-an-online-education-platform.vercel.app" target="_blank">
     <img src="https://img.shields.io/badge/Live%20Demo-Click%20Here-brightgreen?style=for-the-badge" alt="Live Demo">
   </a>
 </p>
