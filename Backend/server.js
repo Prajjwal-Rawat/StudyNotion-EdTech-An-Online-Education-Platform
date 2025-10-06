@@ -26,10 +26,19 @@ connectCloudinary();
 //middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({
-    origin:"https://study-notion-ed-tech-an-online-education-platform.vercel.app",
-    credentials: true 
-}));
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+    if (origin.includes("study-notion-ed-tech-an-online-education-platform.vercel.app")) {
+      return callback(null, true);
+    }
+    console.log("Blocked by CORS:", origin); // 👈 helpful for debugging
+    callback(new Error("Not allowed by CORS"));
+  },
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 app.use(fileUpload({
     useTempFiles:true,
